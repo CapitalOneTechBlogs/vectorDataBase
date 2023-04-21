@@ -1,0 +1,32 @@
+schema hotel_reviews {
+    document hotel_reviews {
+        field id type int {
+            indexing: summary | attribute
+            attribute: fast-search
+        }
+        field text type string {
+            indexing: summary | attribute
+            attribute: fast-search
+        }
+        field label type int {
+            indexing: summary | attribute
+            attribute: fast-search
+        }
+        field embedding type tensor<float>(d0[1024]) {
+            indexing: summary | attribute | index
+            attribute {
+                distance-metric: euclidean
+            }
+        }
+    }
+
+    fieldset default {
+        fields: id, label
+    }
+
+    rank-profile similarity inherits default {
+        first-phase {
+            expression: closeness(field, embedding)
+        }
+    }
+}
