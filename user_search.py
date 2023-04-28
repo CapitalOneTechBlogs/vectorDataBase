@@ -1,5 +1,12 @@
 #! /usr/bin/env python3
-# Copyright Yahoo. Licensed under the terms of the Apache 2.0 license. See LICENSE in the project root.
+
+#
+#The user_search.py script is modified version of the user_search.py script found in Vespa's news example, available here: https://github.com/vespa-engine/sample-apps/blob/master/news/src/python/user_search.py 
+#As noted in Vespa's repo, the file is offered under the Apache 2.0 license, a copy of which is available at the links below:
+#- https://github.com/vespa-engine/sample-apps/blob/master/LICENSE
+#- https://www.apache.org/licenses/LICENSE-2.0
+#
+
 
 import sys
 import json
